@@ -31,6 +31,7 @@
             <input type="hidden" name="_subject" value="New PRSquad Contact Form Message">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://prsquad.app/contact.html?submitted=1">
 
             <label for="contact-name">Your Name</label>
             <input id="contact-name" name="name" type="text" required>
@@ -71,6 +72,50 @@
     </div>
     <p class="small">&copy; 2026 PRSquad</p>
 </footer>
+
+<script>
+    (function () {
+        var params = new URLSearchParams(window.location.search);
+        if (params.get("submitted") !== "1") {
+            return;
+        }
+
+        var notice = document.createElement("div");
+        notice.setAttribute("role", "status");
+        notice.setAttribute("aria-live", "polite");
+        notice.style.position = "fixed";
+        notice.style.top = "1rem";
+        notice.style.left = "50%";
+        notice.style.transform = "translateX(-50%)";
+        notice.style.width = "min(92vw, 520px)";
+        notice.style.padding = "0.9rem 1rem";
+        notice.style.border = "1px solid #4a80b1";
+        notice.style.borderRadius = "12px";
+        notice.style.background = "rgba(12, 25, 40, 0.96)";
+        notice.style.color = "#eaf3fe";
+        notice.style.boxShadow = "0 18px 36px -20px rgba(0, 0, 0, 0.9)";
+        notice.style.zIndex = "9999";
+        notice.style.textAlign = "center";
+        notice.innerHTML = "<strong>Thank you.</strong> Your form has been submitted successfully.";
+
+        window.scrollTo(0, 0);
+
+        var form = document.querySelector(".contact-form");
+        if (form) {
+            form.reset();
+        }
+
+        document.body.appendChild(notice);
+
+        setTimeout(function () {
+            notice.remove();
+        }, 4500);
+
+        if (window.history && window.history.replaceState) {
+            window.history.replaceState({}, document.title, "contact.html");
+        }
+    })();
+</script>
 
 </body>
 </html>
