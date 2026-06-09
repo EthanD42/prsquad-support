@@ -329,6 +329,54 @@ h1 span {
     font-size: clamp(1rem, 2.2vw, 1.15rem);
 }
 
+.hero-help-buttons {
+    justify-content: center;
+    margin-top: 1.2rem;
+}
+
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(3, 8, 14, 0.72);
+    display: grid;
+    place-items: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.modal-backdrop[hidden] {
+    display: none;
+}
+
+.modal-card {
+    width: min(680px, 100%);
+    border: 1px solid #2e5478;
+    border-radius: 18px;
+    padding: 1.15rem;
+    background:
+        radial-gradient(circle at 80% 10%, rgba(47, 155, 230, 0.2), transparent 46%),
+        linear-gradient(165deg, rgba(14, 27, 43, 0.98) 0%, rgba(9, 18, 29, 0.98) 100%);
+    box-shadow: 0 28px 44px -30px rgba(0, 0, 0, 0.95);
+}
+
+.modal-card h2 {
+    margin: 0;
+    font-size: clamp(1.7rem, 5vw, 2.5rem);
+}
+
+.modal-card p {
+    margin: 0.85rem 0 0;
+    color: #c5d7eb;
+    line-height: 1.62;
+}
+
+.modal-actions {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+
 .home-page footer {
     width: min(1120px, calc(100% - 2.5rem));
     margin-inline: auto;
@@ -884,6 +932,14 @@ footer {
     .panel-item,
     .card {
         padding: 0.8rem;
+    }
+
+    .modal-card {
+        padding: 1rem;
+    }
+
+    .modal-actions .btn {
+        width: 100%;
     }
 
     .store-badge {

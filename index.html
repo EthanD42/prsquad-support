@@ -29,8 +29,23 @@
         <h1>PRSquad</h1>
         <img src="assets/images/icon.png" alt="PRSquad app icon" class="hero-title-icon">
         <p class="tagline">"Train hard. Stay consistent. Build your PR story one lift at a time."</p>
+        <div class="buttons hero-help-buttons">
+            <button type="button" class="btn btn-ghost" id="betaInfoBtn">How to Apply for Beta</button>
+        </div>
     </div>
 </header>
+
+<div class="modal-backdrop" id="betaModal" hidden>
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="beta-modal-title">
+        <h2 id="beta-modal-title">Become a PRSquad Beta Tester</h2>
+        <p>To apply, go to the Contact page and submit the form with your name and email.</p>
+        <p>In the Description field, write 2 to 4 sentences explaining why you want to become a beta tester and what kind of feedback you can provide.</p>
+        <div class="modal-actions">
+            <a href="contact.html" class="btn btn-solid">Go to Contact</a>
+            <button type="button" class="btn btn-ghost" id="closeBetaModal">Close</button>
+        </div>
+    </section>
+</div>
 
 <footer>
     <p class="footer-brand">PRSquad Beta</p>
@@ -42,6 +57,43 @@
     </div>
     <p class="small">&copy; 2026 PRSquad</p>
 </footer>
+
+<script>
+    (function () {
+        var openBtn = document.getElementById("betaInfoBtn");
+        var closeBtn = document.getElementById("closeBetaModal");
+        var modal = document.getElementById("betaModal");
+
+        if (!openBtn || !closeBtn || !modal) {
+            return;
+        }
+
+        function openModal() {
+            modal.hidden = false;
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+            modal.hidden = true;
+            document.body.style.overflow = "";
+        }
+
+        openBtn.addEventListener("click", openModal);
+        closeBtn.addEventListener("click", closeModal);
+
+        modal.addEventListener("click", function (event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape" && !modal.hidden) {
+                closeModal();
+            }
+        });
+    })();
+</script>
 
 </body>
 </html>
