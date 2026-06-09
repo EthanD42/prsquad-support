@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact PRSquad</title>
+    <meta name="description" content="Contact PRSquad support for beta testing and account help.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="contact-page">
+
+<div class="bg-shape bg-shape-1"></div>
+<div class="bg-shape bg-shape-2"></div>
+
+<main class="delete-wrap contact-wrap">
+    <nav class="delete-topbar">
+        <a href="index.html" class="back-link">&larr; Back to Home</a>
+    </nav>
+
+    <section class="delete-hero">
+        <h1>Contact PRSquad</h1>
+        <p>For questions, support, or feedback, send us a message below.</p>
+    </section>
+
+    <section class="delete-card">
+        <h2>Send a Message</h2>
+        <form class="contact-form" action="https://formsubmit.co/prsquad20@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New PRSquad Contact Form Message">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+
+            <label for="contact-name">Your Name</label>
+            <input id="contact-name" name="name" type="text" required>
+
+            <label for="contact-email">Your Email</label>
+            <input id="contact-email" name="email" type="email" required>
+
+            <label for="contact-subject">Subject</label>
+            <input id="contact-subject" name="subject" type="text" placeholder="PRSquad Beta Support" required>
+
+            <label for="contact-message">Description</label>
+            <textarea id="contact-message" name="message" rows="6" placeholder="Tell us what you need help with..." required></textarea>
+
+            <button type="submit" class="btn btn-solid">Submit</button>
+        </form>
+       
+    </section>
+
+    <section class="delete-card links-card">
+        <h2>Important Links</h2>
+        <div class="links">
+            <a href="https://www.termsfeed.com/live/fd05a057-9f65-4144-9323-9d0d8bc848cc" target="_blank" rel="noopener noreferrer">Privacy</a>
+            <a href="https://www.termsfeed.com/live/4ef6aa77-8347-4e45-ad3d-4322613b3833" target="_blank" rel="noopener noreferrer">Terms</a>
+            <a href="howtodel.html">Delete Account</a>
+            <a href="mailto:prsquad20@gmail.com">Email Support</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p class="footer-brand">PRSquad Beta</p>
+    <div class="links">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="howtodel.html">Delete Account</a>
+        <a href="https://www.termsfeed.com/live/fd05a057-9f65-4144-9323-9d0d8bc848cc" target="_blank" rel="noopener noreferrer">Privacy</a>
+        <a href="https://www.termsfeed.com/live/4ef6aa77-8347-4e45-ad3d-4322613b3833" target="_blank" rel="noopener noreferrer">Terms</a>
+    </div>
+    <p class="small">&copy; 2026 PRSquad</p>
+</footer>
+
+</body>
+</html>
